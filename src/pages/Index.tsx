@@ -37,6 +37,14 @@ const Index = () => {
     <div className="min-h-screen bg-cream text-charcoal">
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-terracotta/10 to-ocean/5" />
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/c8077a79-89e7-4aeb-a4fa-e384440ba494/files/1a4c0260-8f8d-4bda-a818-d33678741043.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="relative z-10 text-center px-4 animate-fade-in">
           <h1 className="font-display text-7xl md:text-9xl font-light mb-6 tracking-tight">
             fairy airy
