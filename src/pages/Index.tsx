@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeCollection, setActiveCollection] = useState('all');
 
   const collections = [
@@ -38,6 +40,7 @@ const Index = () => {
     { name: 'Галерея', href: '#gallery' },
     { name: 'Процесс', href: '#process' },
     { name: 'Коллекции', href: '#collections' },
+    { name: 'Магазин', href: '/shop', isRoute: true },
     { name: 'Контакты', href: '#footer' },
   ];
 
@@ -55,8 +58,13 @@ const Index = () => {
                 href={item.href}
                 className="block px-6 py-4 hover:bg-terracotta hover:text-white transition-all border-b border-charcoal/5 last:border-0"
                 onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  if (item.isRoute) {
+                    e.preventDefault();
+                    navigate(item.href);
+                  } else {
+                    e.preventDefault();
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
               >
                 {item.name}
