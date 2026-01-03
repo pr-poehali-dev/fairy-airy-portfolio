@@ -33,8 +33,39 @@ const Index = () => {
     ? gallery 
     : gallery.filter(item => item.collection === activeCollection);
 
+  const menuItems = [
+    { name: 'Главная', href: '#' },
+    { name: 'Галерея', href: '#gallery' },
+    { name: 'Процесс', href: '#process' },
+    { name: 'Коллекции', href: '#collections' },
+    { name: 'Контакты', href: '#footer' },
+  ];
+
   return (
     <div className="min-h-screen bg-cream text-charcoal">
+      <div className="fixed top-8 right-8 z-50 group">
+        <div className="p-3 bg-white rounded-full shadow-lg hover:bg-terracotta hover:text-white transition-all duration-300 cursor-pointer hover-scale">
+          <Icon name="Menu" size={24} />
+        </div>
+        <div className="absolute top-16 right-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden min-w-[200px] animate-fade-in">
+            {menuItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="block px-6 py-4 hover:bg-terracotta hover:text-white transition-all border-b border-charcoal/5 last:border-0"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-terracotta/10 to-ocean/5" />
         <div 
@@ -158,7 +189,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 md:px-8">
+      <section id="collections" className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-5xl md:text-6xl font-light mb-16 animate-fade-in">
             Коллекции
@@ -201,7 +232,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-16 px-4 md:px-8 bg-charcoal text-cream">
+      <footer id="footer" className="py-16 px-4 md:px-8 bg-charcoal text-cream">
         <div className="max-w-7xl mx-auto text-center">
           <h3 className="font-display text-3xl mb-4">fairy airy</h3>
           <p className="text-cream/70 mb-8">Керамика ручной работы с душой</p>
