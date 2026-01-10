@@ -85,7 +85,7 @@ const Index = () => {
           }}
         />
         <div className="relative z-10 text-center px-4 animate-fade-in">
-          <h1 className="font-display text-7xl md:text-9xl font-bold mb-6 tracking-tight hero-title">
+          <h1 className="font-display text-7xl md:text-9xl font-light mb-6 tracking-tight">
             fairy airy
           </h1>
           <p className="text-xl md:text-2xl text-charcoal/70 font-light tracking-wide">

@@ -106,25 +106,4 @@
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
   }
-
-  .hero-title {
-    background: linear-gradient(
-      135deg,
-      #ff8a80 0%,
-      #ffab91 25%,
-      #ffd180 50%,
-      #ffe082 75%,
-      #fff59d 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow:
-      0 4px 8px rgba(255, 138, 128, 0.3),
-      0 8px 16px rgba(255, 171, 145, 0.2),
-      0 12px 24px rgba(255, 209, 128, 0.1);
-    filter: drop-shadow(0 6px 12px rgba(255, 138, 128, 0.4))
-      drop-shadow(0 2px 4px rgba(255, 171, 145, 0.3));
-    letter-spacing: 0.02em;
-  }
 }
